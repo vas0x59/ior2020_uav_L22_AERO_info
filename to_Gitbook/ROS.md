@@ -1,9 +1,29 @@
 
 
-### ROS
+## ROS
+Созданные ноды, топики, сообщения и сервисы
 
-#### Messages
- - ColorMarker
+
+### Nodes
+
+<ul style="list-style: none; font-size:15px; padding-left:10px">
+ <li>l22_aero_vision/<b>color_r_c.py</b> - распознование цветных объектов</li>
+ <li>l22_aero_vision/<b>viz.py</b> - визуализация в RViz</li>
+ <li>l22_aero_code/<b>full_task.py</b> - основной код  </li>
+</ul>
+
+### Topics
+
+<ul style="list-style: none; font-size:15px; padding-left:10px">
+ <li><b>/l22_aero_color/markers</b> l22_aero_vision/ColorMarkerArray - список прямоугольных маркеров</li>
+ <li><b>/l22_aero_color/circles</b> l22_aero_vision/ColorMarkerArray - список круглых маркеров</li>
+ <li><b>/l22_aero_color/debug_img</b> sensor_msgs/Image - изображение для отладки </li>
+ <li><b>/qr_debug</b> sensor_msgs/Image - изображение для отладки </li>
+</ul>
+
+
+### Messages
+#### ColorMarker
 ```cpp
 string color
 int16 cx_img
@@ -15,13 +35,13 @@ float32 size1
 float32 size2
 int16 type
 ```
- - ColorMarkerArray
+#### ColorMarkerArray
 ```cpp
 std_msgs/Header header
 l22_aero_vision/ColorMarker[] markers
 ```
-#### Services
- - SetParameters
+### Services
+#### SetParameters
 ```
 float32 rect_s1
 float32 rect_s2
@@ -32,9 +52,11 @@ int32 offset_h
 ---
 ```
 
-#### Nodes
+<!-- ### Launch files -->
 
-#### Topics
-
-
-#### 
+<!-- <ul style="list-style: none; font-size:15px; padding-left:10px">
+ <li><b>/l22_aero_color/markers</b> l22_aero_vision/ColorMarkerArray - список прямоугольных маркеров</li>
+ <li><b>/l22_aero_color/circles</b> l22_aero_vision/ColorMarkerArray - список круглых маркеров</li>
+ <li><b>/l22_aero_color/debug_img</b> sensor_msgs/Image - изображение для отладки </li>
+ <li><b>/qr_debug</b> sensor_msgs/Image - изображение для отладки </li>
+</ul> -->

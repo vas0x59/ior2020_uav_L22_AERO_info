@@ -12,12 +12,14 @@
 1. Определение положения квадратов и кругов с помощью solvePnP основываясь на реальных размерах объектов и точек на изображении ( [Opencv Docs](https://docs.opencv.org/3.4/d9/d0c/group__calib3d.html#ga549c2075fac14829ff4a58bc931c033d) )
 1. Отправка результата в топики ```/l22_aero_color/markers```  и  ```/l22_aero_color/circles``` ( координаты относительно main_camera_optical )
 
-Для упрощения работы были создани свои типы сообщений, а так же сервис для настройки параметров детектора во время посадки. (ColorMarker, ColorMarkerArray, SetParameters)
-
+Во время разработки были создани свои типы сообщений, а так же сервис для настройки параметров детектора во время посадки. (ColorMarker, ColorMarkerArray, SetParameters). 
+Для определения положения цветных обьектов в системе координат поля была использована библиотека TF ([http://wiki.ros.org/tf](http://wiki.ros.org/tf))
 
 <!-- IMAGE or VIDEO -->
-<img src="https://github.com/vas0x59/ior2020_uav_L22_AERO/raw/master/to_Gitbook/content/5_D1_2.png" height="355">
-<video autoplay loop src="https://github.com/vas0x59/ior2020_uav_L22_AERO/raw/master/to_Gitbook/content/r1.mp4" height="360" ></video>
+<img src="https://github.com/vas0x59/ior2020_uav_L22_AERO_info/raw/master/to_Gitbook/content/5_D1_2.png" height="355">
+<video id="v1" autoplay preload="auto" loop height="360" controls src="https://github.com/vas0x59/ior2020_uav_L22_AERO_info/raw/master/to_Gitbook/content/r1.mp4">
+<!-- <source id="vs1" ></source> -->
+</video>
 <p><i>Примеры распознование маркеров</i></p>
 
 ## Визуализация в RViz
@@ -26,6 +28,8 @@
 Для отладки мы сделали скрипт визуализирующий координаты маркеров в среде RViz.
 
 <!-- IMAGE or VIDEO -->
-<video autoplay loop src="https://github.com/vas0x59/ior2020_uav_L22_AERO/raw/master/to_Gitbook/content/RViz.mp4" height="360" ></video>
 
+<video id="v2" autoplay preload="auto" loop  height="360" controls src="https://github.com/vas0x59/ior2020_uav_L22_AERO_info/raw/master/to_Gitbook/content/RViz.mp4">
+<!-- <source id="vs2" ></source> -->
+</video>
 
