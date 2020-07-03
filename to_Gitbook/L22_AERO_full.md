@@ -105,7 +105,7 @@
 3. Спуск в течении нескольких секунд с постоянной корректировкой по координатам маркера посадки в системе координат body (так как aruco маркеры могут быть уже не видны), вместо navigate используется set_position
 
 
-<video autoplay loop src="https://github.com/vas0x59/ior2020_uav_L22_AERO_info/raw/master/to_Gitbook/content/l2.mp4" height="400" ></video>
+<video autoplay controls preload="auto" loop src="https://github.com/vas0x59/ior2020_uav_L22_AERO_info/raw/master/to_Gitbook/content/l2.mp4" height="400" ></video>
 
 ## Gazebo
 По причине отсутвия возможности тестирования кода на своем реальном дроне было принято решение воспользоваться симулятором Gazebo.
