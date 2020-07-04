@@ -474,15 +474,15 @@ code {
 <li>Спуск до высоты в 0.85м с 3 корректировками по координат маркера относительно aruco_map</li>
 <li>Спуск в течении нескольких секунд с постоянной корректировкой по координатам маркера посадки в системе координат body (так как aruco маркеры могут быть уже не видны), вместо navigate используется set_position</li>
 </ol>
-<p><video autoplay loop src="https://github.com/vas0x59/ior2020_uav_L22_AERO_info/raw/master/to_Gitbook/content/l2.mp4" height="400" ></video></p>
+<p><video autoplay controls preload="auto" loop src="https://github.com/vas0x59/ior2020_uav_L22_AERO_info/raw/master/to_Gitbook/content/l2.mp4" height="400" ></video></p>
 <h2 id="gazebo">Gazebo</h2>
-<p>По причине отсутвия возможности тестирования кода на своем реальном дроне было принято решение воспользоваться симулятором Gazebo.</p>
+<p>По причине отсутствия возможности тестирования кода на своем реальном дроне было принято решение воспользоваться симулятором Gazebo.</p>
 <p>Для запуска пакета ПО Клевера в симуляторе можно использовать <a href="https://github.com/vas0x59/clever_sim">набор скриптов</a> или <a href="https://dev.px4.io/v1.9.0/en/simulation/ros_interface.html">оригинальную инструкцию от PX4</a>.</p>
 <p>Для Innopolis Open было создано несколько тестовых сцен. <a href="https://github.com/vas0x59/ior2020_uav_L22_AERO_sim">ior2020_uav_L22_AERO_sim</a></p>
 <p>Также использование симулятора ускорило отладку полного выполнения кода, так как запуск производился с real time factor=2.5</p>
 <img src="https://github.com/vas0x59/ior2020_uav_L22_AERO_info/raw/master/to_Gitbook/content/real_map.jpg" height="250">
 <img src="https://github.com/vas0x59/ior2020_uav_L22_AERO_info/raw/master/to_Gitbook/content/big_map.jpg" height="250">
-<p>При тестировании выявлены некоторые проблемы(некорректное положение aruco_map) с использованием дисторсии в плагине камеры, по этому в симуляторе использовалась камера типа Pinhole (без искожений от объектива)</p>
+<p>При тестировании выявлены некоторые проблемы(некорректное положение aruco_map) с использованием дисторсии в плагине камеры, по этому в симуляторе использовалась камера типа Pinhole (без искажений от объектива)</p>
 <h2 id="ros">ROS</h2>
 <p>Созданные ноды, топики, сообщения и сервисы</p>
 <h3 id="nodes">Nodes</h3>
