@@ -66,7 +66,7 @@
 
 <!-- IMAGE or VIDEO -->
 <img src="https://github.com/vas0x59/ior2020_uav_L22_AERO_info/raw/master/to_Gitbook/content/5_D1_2.png" height="355">
-<video id="v1" autoplay preload="auto" loop height="360" controls src="https://github.com/vas0x59/ior2020_uav_L22_AERO_info/raw/master/to_Gitbook/content/r1.mp4">
+<video id="v1" autoplay preload="auto" loop height="360" controls src="https://github.com/vas0x59/ior2020_uav_L22_AERO_info/raw/master/to_Gitbook/content/IO_UAV_Day2_with_Landing_150x.mp4">
 <!-- <source id="vs1" ></source> -->
 </video>
 <p><i>Примеры распознавание маркеров</i></p>
