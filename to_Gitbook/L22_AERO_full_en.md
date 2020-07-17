@@ -49,7 +49,7 @@ Algorithm:
 2. Building a mask based on a specific color range (in HSV format).
 3. Detection of contours of colored objects.
 4. Determining the type of an object, getting the key points of the object in the image.
-5. Определение положения маркеров и зон посадок с помощью solvePnP основываясь на реальных размерах объектов и точках на изображении ([OpenCV Docs](https://docs.opencv.org/3.4/d9/d0c/group__calib3d.html#ga549c2075fac14829ff4a58bc931c033d)).
+5. Determine the position of markers and landing zones using solvePnP based on the actual size of objects and key points in the image ([OpenCV Docs](https://docs.opencv.org/3.4/d9/d0c/group__calib3d.html#ga549c2075fac14829ff4a58bc931c033d)).
 6. Sending results to topics `/l22_aero_color/markers`  and  `/l22_aero_color/circles` (coordinates relative to `main_camera_optical` frame).
 
 Во время разработки были созданы свои типы сообщений, а также сервис для настройки параметров детектора во время посадки. (`ColorMarker`, `ColorMarkerArray`, `SetParameters`).
