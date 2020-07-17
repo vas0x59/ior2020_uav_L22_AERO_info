@@ -1,8 +1,8 @@
-# Innopolis Open 2020 - команда L22_ÆRO
+# Innopolis Open 2020 - L22_ÆRO team
 
-## Команда
+## Team
 
-* [Юрьев Василий](https://vk.com/vasily_0x59).
+* [Yuryev Vasily](https://vk.com/vasily_0x59).
 * [Оконешников Дмитрий](https://vk.com/okoneshdmitriy).
 
 ## Описание задачи финала
@@ -19,9 +19,9 @@
 * Определение их координат (расположение на поле изменяется).
 * Отчет по полученным данным.
 
-## Код
+## Code
 
-Код на GitHub: https://github.com/vas0x59/ior2020_uav_L22_AERO.
+Code on GitHub: https://github.com/vas0x59/ior2020_uav_L22_AERO.
 
 ## Основной код
 
@@ -37,7 +37,7 @@
 
 Итоговыми координатами маркеров являются автоматически сгруппированные и усредненные данные из системы распознавания полученных за весь полет. Для покрытия всей территории была выбрана траектория "Зиг-заг". Для отладки применен симулятор Gazebo.
 
-## Цветные маркеры
+## Color markers
 
 `l22_aero_vision/src/color_r_c.py`
 
@@ -60,11 +60,11 @@
 
 <img src="../assets/5_D1_2.jpg" height="355">
 
-Примеры распознавание маркеров:
+Examples of marker recognition:
 
 <iframe width="600" height="360" src="https://www.youtube.com/embed/kCW87RTA838" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Визуализация в RViz
+## Visualization in RViz
 
 `l22_aero_vision/src/viz.py`
 
@@ -78,7 +78,7 @@
 
 Для выполнения задачи распознавания QR-кода была использована библиотека PyZbar. С целью повышения результативности и точности распознавания QR-кода полеты производились на небольшой высоте по точкам, расположенным вокруг данного объекта.
 
-## Посадка
+## Landing
 
 Посадка выполняется в 3 этапа:
 
@@ -106,13 +106,13 @@
 
 ## ROS
 
-Созданные ноды, топики, сообщения и сервисы.
+Created nodes, topics, messages and services.
 
 ### Nodes
 
-* `l22_aero_vision/color_r_c.py` - распознавание цветных объектов.
-* `l22_aero_vision/viz.py` - визуализация в RViz.
-* `l22_aero_code/full_task.py` - основной код.
+* `l22_aero_vision/color_r_c.py`- recognition of colored objects.
+* `l22_aero_vision/viz.py` - visualization in RViz
+* `l22_aero_code/full_task.py` - main code.
 
 ### Topics
 
