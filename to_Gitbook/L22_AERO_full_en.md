@@ -35,7 +35,7 @@ Elements of the program:
 4. Landing.
 5. Generate report and video.
 
-Итоговыми координатами маркеров являются автоматически сгруппированные и усредненные данные из системы распознавания полученных за весь полет. Для покрытия всей территории была выбрана траектория "Зиг-заг". The Gazebo simulator is used for debugging.
+The final coordinates of markers are automatically grouped and averaged data from the recognition system received for the entire flight. The "Zig-zag" trajectory was chosen to cover the entire territory. The Gazebo simulator is used for debugging.
 
 ## Color markers
 
@@ -45,8 +45,8 @@ For image processing and object detection, we used functions from the OpenCV lib
 
 Algorithm:
 
-1. Получение изображения и параметров камеры.
-2. Построение маски по определенному диапазону цветов (в формате HSV).
+1. Receiving the image and camera parameters.
+2. Building a mask based on a specific color range (in HSV format).
 3. Detection of contours of colored objects.
 4. Determining the type of an object, getting the key points of the object in the image.
 5. Определение положения маркеров и зон посадок с помощью solvePnP основываясь на реальных размерах объектов и точках на изображении ([OpenCV Docs](https://docs.opencv.org/3.4/d9/d0c/group__calib3d.html#ga549c2075fac14829ff4a58bc931c033d)).
@@ -56,7 +56,7 @@ Algorithm:
 
 To convert the position of colored objects into `aruco_map` frame TF library was used ([http://wiki.ros.org/tf](http://wiki.ros.org/tf))
 
-Из-за искажений по краям изображения от fisheye-объектива все распознанные контуры находящийся рядом с краем изображения игнорируются. Во время посадки данный фильтр отключается. Определение типа объекта производиться с помощью функций анализа контуров (`approxPolyDP` - кол-во вершин; `minAreaRect`, `contourArea` - соотношение площади описанного квадрата и площади контура + соотношение сторон).
+Из-за искажений по краям изображения от fisheye-объектива все распознанные контуры находящийся рядом с краем изображения игнорируются. This filter is disabled during landing. Определение типа объекта производиться с помощью функций анализа контуров (`approxPolyDP` - кол-во вершин; `minAreaRect`, `contourArea` - соотношение площади описанного квадрата и площади контура + соотношение сторон).
 
 <img src="../assets/5_D1_2.jpg" height="355">
 
