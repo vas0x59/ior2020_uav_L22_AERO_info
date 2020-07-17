@@ -23,7 +23,7 @@
 
 Code on GitHub: https://github.com/vas0x59/ior2020_uav_L22_AERO.
 
-## Основной код
+## Main programm
 
 При реализации кода в первоначальной концепции использовались свои типы сообщений, множество нод и других возможностей ROS, для обеспечения этого функционала необходимо создавать пакет и компилировать его, но из-за специфики соревнований (использование одной SD-карты для все команд) весь код был объединен в один файл. Данный подход усложнил отладку, но упростил запуск на площадке.
 
@@ -35,7 +35,7 @@ Elements of the program:
 4. Landing.
 5. Generate report and video.
 
-Итоговыми координатами маркеров являются автоматически сгруппированные и усредненные данные из системы распознавания полученных за весь полет. Для покрытия всей территории была выбрана траектория "Зиг-заг". Для отладки применен симулятор Gazebo.
+Итоговыми координатами маркеров являются автоматически сгруппированные и усредненные данные из системы распознавания полученных за весь полет. Для покрытия всей территории была выбрана траектория "Зиг-заг". The Gazebo simulator is used for debugging.
 
 ## Color markers
 
@@ -50,13 +50,13 @@ Algorithm:
 3. Detection of contours of colored objects.
 4. Determining the type of an object, getting the key points of the object in the image.
 5. Определение положения маркеров и зон посадок с помощью solvePnP основываясь на реальных размерах объектов и точках на изображении ([OpenCV Docs](https://docs.opencv.org/3.4/d9/d0c/group__calib3d.html#ga549c2075fac14829ff4a58bc931c033d)).
-6. Отправка результата в топики `/l22_aero_color/markers`  и  `/l22_aero_color/circles` (координаты относительно `main_camera_optical`).
+6. Sending results to topics `/l22_aero_color/markers`  and  `/l22_aero_color/circles` (coordinates relative to `main_camera_optical` frame).
 
 Во время разработки были созданы свои типы сообщений, а также сервис для настройки параметров детектора во время посадки. (`ColorMarker`, `ColorMarkerArray`, `SetParameters`).
 
 To convert the position of colored objects into `aruco_map` frame TF library was used ([http://wiki.ros.org/tf](http://wiki.ros.org/tf))
 
-Из-за искажений по краям изображения от fisheye-объектива все распознанные контуры находящийся рядом с краем изображения игнорируются. Во время посадки данный фильтр отключается. Определение типа объекта производиться с помощью функций анализа контуров (approxPolyDP - кол-во вершин; `minAreaRect`, `contourArea` - соотношение площади описанного квадрата и площади контура + соотношение сторон).
+Из-за искажений по краям изображения от fisheye-объектива все распознанные контуры находящийся рядом с краем изображения игнорируются. Во время посадки данный фильтр отключается. Определение типа объекта производиться с помощью функций анализа контуров (`approxPolyDP` - кол-во вершин; `minAreaRect`, `contourArea` - соотношение площади описанного квадрата и площади контура + соотношение сторон).
 
 <img src="../assets/5_D1_2.jpg" height="355">
 
@@ -68,11 +68,11 @@ Examples of marker recognition:
 
 `l22_aero_vision/src/viz.py`
 
-Для отладки распознавания объектов создан скрипт визуализирующий координаты маркеров в среде RViz.
+To debug object recognition, a script has been created that visualizes the coordinates of markers in the RViz utility.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6xJ33UD-NfE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## QR-код
+## QR code
 
 <img src="../assets/qr.jpg" width="400" title="Момент распознавания QR-кода во время зачетной попытки">
 
@@ -80,11 +80,11 @@ Examples of marker recognition:
 
 ## Landing
 
-Посадка выполняется в 3 этапа:
+Landing is performed in 3 stages:
 
-1. Перелет к предполагаемой зоне посадки и зависание на высоте 1.5 м.
-2. Спуск до высоты в 0.85 м с 3 корректировками по координатам маркера относительно `aruco_map`.
-3. Спуск в течение нескольких секунд с постоянной корректировкой по координатам маркера посадки в системе координат `body` (так как ArUco-маркеры могут быть уже не видны), вместо `navigate` используется `set_position`.
+1. Flight to the intended landing zone and hovering at an altitude of 1.5 m.
+2. Descent to a height of 0.85 m with 3 adjustments to the marker coordinates relative to `aruco_map` frame.
+3. Descent within a few seconds with adjustments based on the coordinates of the landing marker in `body` coordinate system (since ArUco-markers may no longer be visible), instead of `navigate`,` set_position` is used.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8nVGoWkdYcA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
