@@ -25,7 +25,7 @@ Code on GitHub: https://github.com/vas0x59/ior2020_uav_L22_AERO.
 
 ## Основной код
 
-When implementing the code, the initial concept used its own message types, many nodes and other ROS capabilities, to provide this functionality, you need to create a package and compile it, but due to the specifics of the competition (using one SD card for all commands), all the code was combined into one file. This approach made debugging more difficult, but made it easier to launch on site.
+При реализации кода в первоначальной концепции использовались свои типы сообщений, множество нод и других возможностей ROS, для обеспечения этого функционала необходимо создавать пакет и компилировать его, но из-за специфики соревнований (использование одной SD-карты для все команд) весь код был объединен в один файл. Данный подход усложнил отладку, но упростил запуск на площадке.
 
 Elements of the program:
 
