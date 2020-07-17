@@ -365,14 +365,15 @@ code {
           : 'default'
     });
   </script>
-<h1 id="innopolis-open-2020">Innopolis Open 2020</h1>
+<h1 id="innopolis-open-2020---%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0-l22%C3%A6ro">Innopolis Open 2020 - команда L22_ÆRO</h1>
 <h2 id="%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0">Команда</h2>
-<p><strong>Юрьев Василий</strong> <br>
-<strong>Оконешников Дмитрий</strong></p>
+<ul>
+<li><a href="https://vk.com/vasily_0x59">Юрьев Василий</a>.</li>
+<li><a href="https://vk.com/okoneshdmitriy">Оконешников Дмитрий</a>.</li>
+</ul>
 <h2 id="%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8-%D1%84%D0%B8%D0%BD%D0%B0%D0%BB%D0%B0">Описание задачи финала</h2>
 <p>Внедрение новых технологий происходит в различных отраслях экономики, в том числе и в сельском хозяйстве. Дроны или БПЛА не стали исключением. Благодаря применению беспилотников оценка состояния сельскохозяйственных территорий и анализ компонентов ландшафта стали более доступными и эффективными.</p>
-<img src="https://lh3.googleusercontent.com/EC9SW_yuIq46aqxf6jpyVJhft5Fjxbned75RMcv_XLYABa6Qobz1fZRM1J0SzlMGRw_cpCa2Z6wyH-uG5r9TNzauScajpE0VxXtNL72UN1aSMs5hL1a3cpjw4L6mIkMia7zpKZIem5vRsc6YxLLcOl7hNknlfcMzPk8GZ7k11IfZzodiPCEjasy_sz4NGsXN0t7r207DQkJdkTCCkOonBNItijZQpPMIFfdDoS2wj8pGrl4r5cmWzWz2T0SEnfkgq_NypHYluFUMMCO1AVgJEbPu9bh5dhd-Vmqy56q12EV8ZAy7ASd-loL_THEos1kWhYMe4mq3UCzTj46E20uBd2MYUIBX1Vff-mug__CGVEJQlMsSolpHG6lw-Z8LufgMBOgIma-a8SmqQyZykyFDUFZ4crDeJwKBYJ0jAdKPSOGhE7LBznajePEFdu_vZKyZuwm0qSim9e5vvNuSUqZcaYL1dOxScabbu0mPgS05qVhnEkcSH_4eZ38hm95D3xj0Ry0qbemf7fmsFk40R8ud8_OZ88lnPFa8C64L7YXvtBt-MZ87DsaLrEEwZMblqSLqr5oXQtNAs-aH5KOtYCSLp8Dk0ZLLaJ9cbsS-WALlGnKg24sUgfWkf3Y_IflsyaYHahbOdZwd7whdEqEvjC2uYAdibDZdmUO0ed_0iTyN99x7VoRdtzspb4s-s6zTE4jx5EHzwQ=w1920-h625-ft" width="300"> 
-<p><em>Один из вариантов поля</em></p>
+<img src="../assets/photo_2020-06-18_18-54-23.jpg" width="300" title="Один из вариантов поля">
 <p>Финальная задача Innopolis Open 2020 была посвящена мониторингу сельскохозяйственных территорий и состояла из следующих элементов:</p>
 <ul>
 <li>Взлет (с QR-кода) и посадка (на цветной маркер небольшого размера).</li>
@@ -381,90 +382,78 @@ code {
 <li>Определение их координат (расположение на поле изменяется).</li>
 <li>Отчет по полученным данным.</li>
 </ul>
-<h1 id="%D0%BA%D0%BE%D0%B4">Код</h1>
-<h2 id="github-httpsgithubcomvas0x59ior2020uavl22aero">Github <a href="https://github.com/vas0x59/ior2020_uav_L22_AERO">https://github.com/vas0x59/ior2020_uav_L22_AERO</a></h2>
+<h2 id="%D0%BA%D0%BE%D0%B4">Код</h2>
+<p>Код на GitHub: https://github.com/vas0x59/ior2020_uav_L22_AERO.</p>
 <h2 id="%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9-%D0%BA%D0%BE%D0%B4">Основной код</h2>
-<p>При реализации кода в первоначальной концепции использовались свои типы сообщений, множество нод и других возможностей ROS, для обеспечения этого функционала необходимо создавать пакет и компилировать его, но из-за специфики соревнований (использование одной sd карты для все команд) весь код был объединен в один файл. Данный подход усложнил отладку, но упростил запуск на площадке.</p>
+<p>При реализации кода в первоначальной концепции использовались свои типы сообщений, множество нод и других возможностей ROS, для обеспечения этого функционала необходимо создавать пакет и компилировать его, но из-за специфики соревнований (использование одной SD-карты для все команд) весь код был объединен в один файл. Данный подход усложнил отладку, но упростил запуск на площадке.</p>
 <p>Элементы программы:</p>
 <ol>
-<li>Взлет</li>
-<li>Распознавание QR-Кода</li>
-<li>Поиск цветных маркеров</li>
-<li>Посадка</li>
-<li>Генерация отчета и видео</li>
+<li>Взлет.</li>
+<li>Распознавание QR-кода.</li>
+<li>Поиск цветных маркеров.</li>
+<li>Посадка.</li>
+<li>Генерация отчета и видео.</li>
 </ol>
-<!-- Итоговые координаты маркеров основываються на полученных из системы распознавания за весь полет, которые автоматически группируються и усредняються. -->
-<p>Итоговыми координатами маркеров являются автоматически сгруппированные и усредненные данные из системы распознавания полученных за весь полет.
-Для покрытия всей территории была выбрана траектория &quot;Зиг-заг&quot;.
-Для отладки применен симулятор Gazebo.</p>
+<p>Итоговыми координатами маркеров являются автоматически сгруппированные и усредненные данные из системы распознавания полученных за весь полет. Для покрытия всей территории была выбрана траектория &quot;Зиг-заг&quot;. Для отладки применен симулятор Gazebo.</p>
 <h2 id="%D1%86%D0%B2%D0%B5%D1%82%D0%BD%D1%8B%D0%B5-%D0%BC%D0%B0%D1%80%D0%BA%D0%B5%D1%80%D1%8B">Цветные маркеры</h2>
 <p><code>l22_aero_vision/src/color_r_c.py</code></p>
 <p>Для обработки изображения с камеры и детектирования объектов мы использовали функции из библиотеки OpenCV.</p>
-<p>Алгоритм</p>
+<p>Алгоритм:</p>
 <ol>
-<li>Получение изображения и параметров камеры</li>
-<li>Построение маски по определенному диапазону цветов (в формате HSV)</li>
-<li>Детектирование контуров цветных объектов</li>
-<li>Определение типа объекта, получение ключевых точек объекта на изображении</li>
-<li>Определение положения квадратов и кругов с помощью solvePnP основываясь на реальных размерах объектов и точках на изображении ( <a href="https://docs.opencv.org/3.4/d9/d0c/group__calib3d.html#ga549c2075fac14829ff4a58bc931c033d">OpenCV Docs</a> )</li>
-<li>Отправка результата в топики <code>/l22_aero_color/markers</code>  и  <code>/l22_aero_color/circles</code> ( координаты относительно main_camera_optical )</li>
+<li>Получение изображения и параметров камеры.</li>
+<li>Построение маски по определенному диапазону цветов (в формате HSV).</li>
+<li>Детектирование контуров цветных объектов.</li>
+<li>Определение типа объекта, получение ключевых точек объекта на изображении.</li>
+<li>Определение положения квадратов и кругов с помощью solvePnP основываясь на реальных размерах объектов и точках на изображении (<a href="https://docs.opencv.org/3.4/d9/d0c/group__calib3d.html#ga549c2075fac14829ff4a58bc931c033d">OpenCV Docs</a>).</li>
+<li>Отправка результата в топики <code>/l22_aero_color/markers</code>  и  <code>/l22_aero_color/circles</code> (координаты относительно <code>main_camera_optical</code>).</li>
 </ol>
-<p>Во время разработки были созданы свои типы сообщений, а также сервис для настройки параметров детектора во время посадки. (ColorMarker, ColorMarkerArray, SetParameters).
-Для определения положения цветных объектов в системе координат поля была использована библиотека TF (<a href="http://wiki.ros.org/tf">http://wiki.ros.org/tf</a>)</p>
-<p>Из-за искажений по краям изображения от fisheye объектива все распознанные контуры находящийся рядом с краем изображения игнорируются.
-Во время посадки данный фильтр отключается.
-Определение типа объекта производиться с помощью функций анализа контуров (approxPolyDP - кол-во вершин; minAreaRect, counturArea - соотношение площади описанного квадрата и площади контура + соотношение сторон).</p>
-<!-- IMAGE or VIDEO -->
-<img src="https://github.com/vas0x59/ior2020_uav_L22_AERO_info/raw/master/to_Gitbook/content/5_D1_2.png" height="355">
-<!-- <video id="v1" autoplay preload="auto" loop height="360" controls src="https://github.com/vas0x59/ior2020_uav_L22_AERO_info/raw/master/to_Gitbook/content/IO_UAV_Day2_with_Landing_150x.mp4">
-<source id="vs1" ></source>
-</video> -->
+<p>Во время разработки были созданы свои типы сообщений, а также сервис для настройки параметров детектора во время посадки. (<code>ColorMarker</code>, <code>ColorMarkerArray</code>, <code>SetParameters</code>).</p>
+<p>Для определения положения цветных объектов в системе координат поля была использована библиотека TF (<a href="http://wiki.ros.org/tf">http://wiki.ros.org/tf</a>)</p>
+<p>Из-за искажений по краям изображения от fisheye-объектива все распознанные контуры находящийся рядом с краем изображения игнорируются. Во время посадки данный фильтр отключается. Определение типа объекта производиться с помощью функций анализа контуров (approxPolyDP - кол-во вершин; <code>minAreaRect</code>, <code>contourArea</code> - соотношение площади описанного квадрата и площади контура + соотношение сторон).</p>
+<img src="../assets/5_D1_2.jpg" height="355">
+<p>Примеры распознавание маркеров:</p>
 <iframe width="600" height="360" src="https://www.youtube.com/embed/kCW87RTA838" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<p><em>Примеры распознавание маркеров</em></p>
 <h2 id="%D0%B2%D0%B8%D0%B7%D1%83%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%B2-rviz">Визуализация в RViz</h2>
 <p><code>l22_aero_vision/src/viz.py</code></p>
 <p>Для отладки распознавания объектов создан скрипт визуализирующий координаты маркеров в среде RViz.</p>
-<!-- IMAGE or VIDEO -->
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6xJ33UD-NfE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <h2 id="qr-%D0%BA%D0%BE%D0%B4">QR-код</h2>
-<img src="https://lh3.googleusercontent.com/0FGhp05Cek_U63x4aRgD0DKrcoNSwvonOtrR16Zk3ol-8Owg3ir8DKw3bts7PU5V8x5kdCoL4466qY6BYLvZNuLpDYsnwZKu_NslfenqrjSVfqQZ68DXzKiYRbXKF3ALhHGjFWyb9SuwrYU3VDzdFJUsCAF_80I95Bo6e2eUxmxfWUZQt5Wxp7ilyg0Q2LzisLVsgj82tzR5TYaQ2kPRPqpoBb4hzleGs3p5yt4PoCS00QiMIjcMqcgejaML8musmMJ3Kh6zCThLzgkzv8r2LFFjotQadaZ_BkSDe6h-YaU_10bXD-Med-BFzwKW4NRYRMBBhthSVy0yarC0jZcbz55rlN8IhHio_729xUH7FXx--XNNtJ08DKDmE0lVnsnZmWq6o1JEYTthbG8Lo5I3O2pyzkUwBQwSkKUnhksrkQ32BiFInpgT2tEvGILCxjrOdsWRXK81s2KqoUMWWZ7o1DUPxQIBA-v2O-oPxh8Ao-9fPck_ohxWw_OgjopUNh4WtFfhoy26MXq0dCPs2ItcI2jS54W5CgV41tEQyHkf2TUIZRc_AE5b_zZGYLKnx3H0cfOqLj0qwyKpvEKxCteM7cyPNoQaNX2tg_50wJdZe9A3cN6EN5cIud8Ou851RotAFO5miHFyGzpZXNyIGe5_1onyctZ6vaLb1PRrwUbBoXHzjlv7PY7X9e93A4i5n-9-Hpsy9Q=w1920-h937-ft" width="400" >
-<p><em>Момент распознавания QR-кода во время зачетной попытки</em></p>
-<p>Для выполнения задачи распознавания QR-кода была использована библиотека PyZbar.
-С целью повышения результативности и точности распознавания QR-кода полеты производились на небольшой высоте по точкам, расположенным вокруг данного объекта.</p>
+<img src="../assets/qr.jpg" width="400" title="Момент распознавания QR-кода во время зачетной попытки">
+<p>Для выполнения задачи распознавания QR-кода была использована библиотека PyZbar. С целью повышения результативности и точности распознавания QR-кода полеты производились на небольшой высоте по точкам, расположенным вокруг данного объекта.</p>
 <h2 id="%D0%BF%D0%BE%D1%81%D0%B0%D0%B4%D0%BA%D0%B0">Посадка</h2>
 <p>Посадка выполняется в 3 этапа:</p>
 <ol>
-<li>Перелет к предполагаемой зоне посадки и зависание на высоте 1.5м</li>
-<li>Спуск до высоты в 0.85м с 3 корректировками по координатам маркера относительно aruco_map</li>
-<li>Спуск в течение нескольких секунд с постоянной корректировкой по координатам маркера посадки в системе координат body (так как aruco маркеры могут быть уже не видны), вместо navigate используется set_position</li>
+<li>Перелет к предполагаемой зоне посадки и зависание на высоте 1.5 м.</li>
+<li>Спуск до высоты в 0.85 м с 3 корректировками по координатам маркера относительно <code>aruco_map</code>.</li>
+<li>Спуск в течение нескольких секунд с постоянной корректировкой по координатам маркера посадки в системе координат <code>body</code> (так как ArUco-маркеры могут быть уже не видны), вместо <code>navigate</code> используется <code>set_position</code>.</li>
 </ol>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8nVGoWkdYcA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <h2 id="gazebo">Gazebo</h2>
 <p>По причине отсутствия возможности тестирования кода на своем реальном дроне было принято решение воспользоваться симулятором Gazebo.</p>
 <p>Для запуска пакета ПО Клевера в симуляторе можно использовать <a href="https://github.com/vas0x59/clever_sim">набор скриптов</a> или <a href="https://dev.px4.io/v1.9.0/en/simulation/ros_interface.html">оригинальную инструкцию от PX4</a>.</p>
-<p>Для Innopolis Open было создано несколько тестовых сцен. <a href="https://github.com/vas0x59/ior2020_uav_L22_AERO_sim">ior2020_uav_L22_AERO_sim</a></p>
-<p>Также использование симулятора ускорило отладку полного выполнения кода, так как запуск производился с real time factor=2.5</p>
-<img src="https://github.com/vas0x59/ior2020_uav_L22_AERO_info/raw/master/to_Gitbook/content/real_map.jpg" height="250">
-<img src="https://github.com/vas0x59/ior2020_uav_L22_AERO_info/raw/master/to_Gitbook/content/big_map.jpg" height="250">
-<p>При тестировании выявлены некоторые проблемы (некорректное положение aruco_map) с использованием дисторсии в плагине камеры, поэтому в симуляторе использовалась камера типа Pinhole (без искажений от объектива)</p>
+<p>Для Innopolis Open было создано несколько тестовых сцен. <a href="https://github.com/vas0x59/ior2020_uav_L22_AERO_sim">ior2020_uav_L22_AERO_sim</a>.</p>
+<p>Также использование симулятора ускорило отладку полного выполнения кода, так как запуск производился с real time factor=2.5.</p>
+<img src="../assets/real_map.jpg" height="250">
+<img src="../assets/big_map.jpg" height="250">
+<p>При тестировании выявлены некоторые проблемы (некорректное положение <code>aruco_map</code>) с использованием дисторсии в плагине камеры, поэтому в симуляторе использовалась камера типа Pinhole (без искажений от объектива).</p>
 <h2 id="ros">ROS</h2>
-<p>Созданные ноды, топики, сообщения и сервисы</p>
+<p>Созданные ноды, топики, сообщения и сервисы.</p>
 <h3 id="nodes">Nodes</h3>
 <ul>
-<li>l22_aero_vision/<strong>color_r_c.py</strong> - распознавание цветных объектов</li>
-<li>l22_aero_vision/<strong>viz.py</strong> - визуализация в RViz</li>
-<li>l22_aero_code/<strong>full_task.py</strong> - основной код</li>
+<li><code>l22_aero_vision/color_r_c.py</code> - распознавание цветных объектов.</li>
+<li><code>l22_aero_vision/viz.py</code> - визуализация в RViz.</li>
+<li><code>l22_aero_code/full_task.py</code> - основной код.</li>
 </ul>
 <h3 id="topics">Topics</h3>
 <ul>
-<li><strong>/l22_aero_color/markers</strong> l22_aero_vision/ColorMarkerArray - список прямоугольных маркеров</li>
-<li><strong>/l22_aero_color/circles</strong> l22_aero_vision/ColorMarkerArray - список круглых маркеров</li>
-<li><strong>/l22_aero_color/debug_img</strong> sensor_msgs/Image - изображение для отладки</li>
-<li><strong>/qr_debug</strong> sensor_msgs/Image - изображение для отладки</li>
+<li><code>/l22_aero_color/markers</code> (<code>l22_aero_vision/ColorMarkerArray</code>) - список прямоугольных маркеров.</li>
+<li><code>/l22_aero_color/circles</code> (<code>l22_aero_vision/ColorMarkerArray</code>) - список круглых маркеров.</li>
+<li><code>/l22_aero_color/debug_img</code> (<code>sensor_msgs/Image</code>) - изображение для отладки.</li>
+<li><code>/qr_debug</code> (<code>sensor_msgs/Image</code>) - изображение для отладки.</li>
 </ul>
 <h3 id="messages">Messages</h3>
-<h4 id="colormarker">ColorMarker</h4>
-<pre class="hljs"><code><div><span class="hljs-built_in">string</span> color
+<h4 id="colormarker"><code>ColorMarker</code></h4>
+<pre class="hljs"><code><div>string color
 int16 cx_img
 int16 cy_img
 float32 cx_cam
@@ -474,12 +463,12 @@ float32 size1
 float32 size2
 int16 type
 </div></code></pre>
-<h4 id="colormarkerarray">ColorMarkerArray</h4>
+<h4 id="colormarkerarray"><code>ColorMarkerArray</code></h4>
 <pre class="hljs"><code><div>std_msgs/Header header
 l22_aero_vision/ColorMarker[] markers
 </div></code></pre>
 <h3 id="services">Services</h3>
-<h4 id="setparameters">SetParameters</h4>
+<h4 id="setparameters"><code>SetParameters</code></h4>
 <pre class="hljs"><code><div>float32 rect_s1
 float32 rect_s2
 float32 circle_r
