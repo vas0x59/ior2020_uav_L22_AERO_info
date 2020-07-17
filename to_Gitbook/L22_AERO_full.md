@@ -40,7 +40,7 @@ _Один из вариантов поля_
 4. Посадка
 5. Генерация отчета и видео 
 
-<!-- Итоговые координаты маркеров основываються на полученных из системы распознавания за весь полет, которые автоматически группируються и усредняються. -->
+
 Итоговыми координатами маркеров являются автоматически сгруппированные и усредненные данные из системы распознавания полученных за весь полет.
 Для покрытия всей территории была выбрана траектория "Зиг-заг".
 Для отладки применен симулятор Gazebo.
@@ -66,11 +66,9 @@ _Один из вариантов поля_
 Во время посадки данный фильтр отключается.
 Определение типа объекта производиться с помощью функций анализа контуров (approxPolyDP - кол-во вершин; minAreaRect, counturArea - соотношение площади описанного квадрата и площади контура + соотношение сторон).
 
-<!-- IMAGE or VIDEO -->
+
 <img src="https://github.com/vas0x59/ior2020_uav_L22_AERO_info/raw/master/to_Gitbook/content/5_D1_2.png" height="355">
-<!-- <video id="v1" autoplay preload="auto" loop height="360" controls src="https://github.com/vas0x59/ior2020_uav_L22_AERO_info/raw/master/to_Gitbook/content/IO_UAV_Day2_with_Landing_150x.mp4">
-<source id="vs1" ></source>
-</video> -->
+
 <iframe width="600" height="360" src="https://www.youtube.com/embed/kCW87RTA838" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 _Примеры распознавание маркеров_
@@ -81,7 +79,6 @@ _Примеры распознавание маркеров_
 
 Для отладки распознавания объектов создан скрипт визуализирующий координаты маркеров в среде RViz.
 
-<!-- IMAGE or VIDEO -->
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6xJ33UD-NfE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
