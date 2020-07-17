@@ -227,103 +227,79 @@ pre code {
 </style>
 
 <style>
-/*
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
 
-Atom One Dark by Daniel Gamage
-Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
-
-base:    #282c34
-mono-1:  #abb2bf
-mono-2:  #818896
-mono-3:  #5c6370
-hue-1:   #56b6c2
-hue-2:   #61aeee
-hue-3:   #c678dd
-hue-4:   #98c379
-hue-5:   #e06c75
-hue-5-2: #be5046
-hue-6:   #d19a66
-hue-6-2: #e6c07b
-
-*/
-
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  color: #abb2bf;
-  background: #282c34;
-}
-
+/* Tomorrow Comment */
 .hljs-comment,
 .hljs-quote {
-  color: #5c6370;
-  font-style: italic;
+	color: #8e908c;
 }
 
-.hljs-doctag,
-.hljs-keyword,
-.hljs-formula {
-  color: #c678dd;
-}
-
-.hljs-section,
-.hljs-name,
-.hljs-selector-tag,
-.hljs-deletion,
-.hljs-subst {
-  color: #e06c75;
-}
-
-.hljs-literal {
-  color: #56b6c2;
-}
-
-.hljs-string,
-.hljs-regexp,
-.hljs-addition,
-.hljs-attribute,
-.hljs-meta-string {
-  color: #98c379;
-}
-
-.hljs-built_in,
-.hljs-class .hljs-title {
-  color: #e6c07b;
-}
-
-.hljs-attr,
+/* Tomorrow Red */
 .hljs-variable,
 .hljs-template-variable,
-.hljs-type,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
 .hljs-selector-class,
-.hljs-selector-attr,
-.hljs-selector-pseudo,
-.hljs-number {
-  color: #d19a66;
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
 }
 
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
 .hljs-symbol,
 .hljs-bullet,
-.hljs-link,
-.hljs-meta,
-.hljs-selector-id,
-.hljs-title {
-  color: #61aeee;
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
 }
 
 .hljs-emphasis {
-  font-style: italic;
+	font-style: italic;
 }
 
 .hljs-strong {
-  font-weight: bold;
+	font-weight: bold;
 }
-
-.hljs-link {
-  text-decoration: underline;
-}
-
 </style>
 
 <style>
@@ -394,7 +370,6 @@ code {
 <ul style="list-style: none; font-size:15px; padding-left:10px">
  <li><b>Юрьев Василий</b></li>
  <li><b>Оконешников Дмитрий</b></li>
- <li><b>Антонов Георгий</b></li>
 </ul>
 <h2 id="%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8-%D1%84%D0%B8%D0%BD%D0%B0%D0%BB%D0%B0">Описание задачи финала</h2>
 <p>Внедрение новых технологий происходит в различных отраслях экономики, в том числе и в сельском хозяйстве. Дроны или БПЛА не стали исключением. Благодаря применению беспилотников оценка состояния сельскохозяйственных территорий и анализ компонентов ландшафта стали более доступными и эффективными.</p>
@@ -438,11 +413,14 @@ code {
 <li>Построение маски по определенному диапазону цветов (в формате HSV)</li>
 <li>Детектирование контуров цветных объектов</li>
 <li>Определение типа объекта, получение ключевых точек объекта на изображении</li>
-<li>Определение положения квадратов и кругов с помощью solvePnP основываясь на реальных размерах объектов и точек на изображении ( <a href="https://docs.opencv.org/3.4/d9/d0c/group__calib3d.html#ga549c2075fac14829ff4a58bc931c033d">OpenCV Docs</a> )</li>
+<li>Определение положения квадратов и кругов с помощью solvePnP основываясь на реальных размерах объектов и точках на изображении ( <a href="https://docs.opencv.org/3.4/d9/d0c/group__calib3d.html#ga549c2075fac14829ff4a58bc931c033d">OpenCV Docs</a> )</li>
 <li>Отправка результата в топики <code>/l22_aero_color/markers</code>  и  <code>/l22_aero_color/circles</code> ( координаты относительно main_camera_optical )</li>
 </ol>
 <p>Во время разработки были созданы свои типы сообщений, а также сервис для настройки параметров детектора во время посадки. (ColorMarker, ColorMarkerArray, SetParameters).
-Для определения положения цветных объектов в системе координат поля была использована библиотека TF (<a href="http://wiki.ros.org/tf">http://wiki.ros.org/tf</a>)</p>
+Для определения положения цветных объектов в системе координат поля была использована библиотека TF (<a href="http://wiki.ros.org/tf">http://wiki.ros.org/tf</a>)
+Из-за искажений по краем изображения от fisheye объектива все распознанные контуры находящийся рядом с краем изображения игнорируются.
+Во время посадки данный фильтр отключается.
+Определение типа объекта производиться с помощь функций анализа контуров (approxPolyDP - кол-во вершин; minAreaRect, counturArea - соотношение площади описанного квадрата и площади контура + соотношение сторон).</p>
 <!-- IMAGE or VIDEO -->
 <img src="https://github.com/vas0x59/ior2020_uav_L22_AERO_info/raw/master/to_Gitbook/content/5_D1_2.png" height="355">
 <video id="v1" autoplay preload="auto" loop height="360" controls src="https://github.com/vas0x59/ior2020_uav_L22_AERO_info/raw/master/to_Gitbook/content/IO_UAV_Day2_with_Landing_150x.mp4">
