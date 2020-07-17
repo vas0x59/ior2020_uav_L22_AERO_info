@@ -72,11 +72,11 @@ To debug object recognition, a script has been created that visualizes the coord
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6xJ33UD-NfE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## QR code
+## QR-code
 
-<img src="../assets/qr.jpg" width="400" title="Момент распознавания QR-кода во время зачетной попытки">
+<img src="../assets/qr.jpg" width="400" title="A QR-code is being recognized during one of the attempts">
 
-Для выполнения задачи распознавания QR-кода была использована библиотека PyZbar. С целью повышения результативности и точности распознавания QR-кода полеты производились на небольшой высоте по точкам, расположенным вокруг данного объекта.
+The PyZbar library was used to perform the QR-code recognition. In order to improve the accuracy of QR-code recognition, flights around the QR-code were performed at low altitude.
 
 ## Landing
 
@@ -92,7 +92,7 @@ Landing is performed in 3 stages:
 
 По причине отсутствия возможности тестирования кода на своем реальном дроне было принято решение воспользоваться симулятором Gazebo.
 
-Для запуска пакета ПО Клевера в симуляторе можно использовать [набор скриптов](https://github.com/vas0x59/clever_sim) или [оригинальную инструкцию от PX4](https://dev.px4.io/v1.9.0/en/simulation/ros_interface.html).
+To run the Clover software package in the simulator, you can use [this set of scripts](https://github.com/vas0x59/clever_sim) or [original instruction from PX4](https://dev.px4.io/v1.9.0/en/simulation/ros_interface.html).
 
 Для Innopolis Open было создано несколько тестовых сцен. [ior2020_uav_L22_AERO_sim](https://github.com/vas0x59/ior2020_uav_L22_AERO_sim).
 
