@@ -5,19 +5,19 @@
 * [Yuryev Vasily](https://vk.com/vasily_0x59).
 * [Оконешников Дмитрий](https://vk.com/okoneshdmitriy).
 
-## Описание задачи финала
+## Final task description
 
-Внедрение новых технологий происходит в различных отраслях экономики, в том числе и в сельском хозяйстве. Дроны или БПЛА не стали исключением. Благодаря применению беспилотников оценка состояния сельскохозяйственных территорий и анализ компонентов ландшафта стали более доступными и эффективными.
+New technologies are being implemented into various sectors of the economy including agricultural industry. Drones or UAV are no exception. Thanks to their usage, assessment of agricultural territories' states and analysis of landscape components became more effective and accessible.
 
-<img src="../assets/photo_2020-06-18_18-54-23.jpg" width="300" title="Один из вариантов поля">
+<img src="../assets/photo_2020-06-18_18-54-23.jpg" width="300" title="One of the field options">
 
-Финальная задача Innopolis Open 2020 была посвящена мониторингу сельскохозяйственных территорий и состояла из следующих элементов:
+The final task of Innopolis Open 2020 was dedicated to monitoring agricultural territories and consisted of the following elements:
 
-* Взлет (с QR-кода) и посадка (на цветной маркер небольшого размера).
-* Распознавание зашифрованного сообщения в QR-коде.
-* Распознавание цвета объектов (цветных маркеров – условное обозначение сельхоз угодий).
-* Определение их координат (расположение на поле изменяется).
-* Отчет по полученным данным.
+* Takeoff (from QR-code) and landing (onto a small colored marker).
+* QR-code recognition.
+* Colored objects recognition (Colored markers were used to show "agricultural territories").
+* Determination of their coordinates (their locations change).
+* Making a report using the gathered data.
 
 ## Code
 
