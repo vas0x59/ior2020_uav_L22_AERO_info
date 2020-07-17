@@ -25,15 +25,15 @@ Code on GitHub: https://github.com/vas0x59/ior2020_uav_L22_AERO.
 
 ## Основной код
 
-При реализации кода в первоначальной концепции использовались свои типы сообщений, множество нод и других возможностей ROS, для обеспечения этого функционала необходимо создавать пакет и компилировать его, но из-за специфики соревнований (использование одной SD-карты для все команд) весь код был объединен в один файл. Данный подход усложнил отладку, но упростил запуск на площадке.
+When implementing the code, the initial concept used its own message types, many nodes and other ROS capabilities, to provide this functionality, you need to create a package and compile it, but due to the specifics of the competition (using one SD card for all commands), all the code was combined into one file. This approach made debugging more difficult, but made it easier to launch on site.
 
-Элементы программы:
+Elements of the program:
 
-1. Взлет.
-2. Распознавание QR-кода.
-3. Поиск цветных маркеров.
-4. Посадка.
-5. Генерация отчета и видео.
+1. Takeoff.
+2. QR code recognition.
+3. Color markers recognition.
+4. Landing.
+5. Generate report and video.
 
 Итоговыми координатами маркеров являются автоматически сгруппированные и усредненные данные из системы распознавания полученных за весь полет. Для покрытия всей территории была выбрана траектория "Зиг-заг". Для отладки применен симулятор Gazebo.
 
@@ -41,20 +41,20 @@ Code on GitHub: https://github.com/vas0x59/ior2020_uav_L22_AERO.
 
 `l22_aero_vision/src/color_r_c.py`
 
-Для обработки изображения с камеры и детектирования объектов мы использовали функции из библиотеки OpenCV.
+For image processing and object detection, we used functions from the OpenCV library.
 
-Алгоритм:
+Algorithm:
 
 1. Получение изображения и параметров камеры.
 2. Построение маски по определенному диапазону цветов (в формате HSV).
-3. Детектирование контуров цветных объектов.
-4. Определение типа объекта, получение ключевых точек объекта на изображении.
-5. Определение положения квадратов и кругов с помощью solvePnP основываясь на реальных размерах объектов и точках на изображении ([OpenCV Docs](https://docs.opencv.org/3.4/d9/d0c/group__calib3d.html#ga549c2075fac14829ff4a58bc931c033d)).
+3. Detection of contours of colored objects.
+4. Determining the type of an object, getting the key points of the object in the image.
+5. Определение положения маркеров и зон посадок с помощью solvePnP основываясь на реальных размерах объектов и точках на изображении ([OpenCV Docs](https://docs.opencv.org/3.4/d9/d0c/group__calib3d.html#ga549c2075fac14829ff4a58bc931c033d)).
 6. Отправка результата в топики `/l22_aero_color/markers`  и  `/l22_aero_color/circles` (координаты относительно `main_camera_optical`).
 
 Во время разработки были созданы свои типы сообщений, а также сервис для настройки параметров детектора во время посадки. (`ColorMarker`, `ColorMarkerArray`, `SetParameters`).
 
-Для определения положения цветных объектов в системе координат поля была использована библиотека TF ([http://wiki.ros.org/tf](http://wiki.ros.org/tf))
+To convert the position of colored objects into `aruco_map` frame TF library was used ([http://wiki.ros.org/tf](http://wiki.ros.org/tf))
 
 Из-за искажений по краям изображения от fisheye-объектива все распознанные контуры находящийся рядом с краем изображения игнорируются. Во время посадки данный фильтр отключается. Определение типа объекта производиться с помощью функций анализа контуров (approxPolyDP - кол-во вершин; `minAreaRect`, `contourArea` - соотношение площади описанного квадрата и площади контура + соотношение сторон).
 
