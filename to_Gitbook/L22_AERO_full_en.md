@@ -72,11 +72,11 @@ To debug object recognition, a script has been created that visualizes the coord
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6xJ33UD-NfE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## QR code
+## QR-code
 
-<img src="../assets/qr.jpg" width="400" title="Момент распознавания QR-кода во время зачетной попытки">
+<img src="../assets/qr.jpg" width="400" title="A QR-code is being recognized during one of the attempts">
 
-Для выполнения задачи распознавания QR-кода была использована библиотека PyZbar. С целью повышения результативности и точности распознавания QR-кода полеты производились на небольшой высоте по точкам, расположенным вокруг данного объекта.
+The PyZbar library was used to perform the QR-code recognition. In order to improve the accuracy of QR-code recognition, flights around the QR-code were performed at low altitude.
 
 ## Landing
 
