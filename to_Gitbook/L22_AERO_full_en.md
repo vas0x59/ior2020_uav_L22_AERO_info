@@ -110,16 +110,16 @@ Created nodes, topics, messages and services.
 
 ### Nodes
 
-* `l22_aero_vision/color_r_c.py`- recognition of colored objects.
+* `l22_aero_vision/color_r_c.py` - recognition of colored objects.
 * `l22_aero_vision/viz.py` - visualization in RViz
 * `l22_aero_code/full_task.py` - main code.
 
 ### Topics
 
-* `/l22_aero_color/markers` (`l22_aero_vision/ColorMarkerArray`) - список прямоугольных маркеров.
-* `/l22_aero_color/circles` (`l22_aero_vision/ColorMarkerArray`) - список круглых маркеров.
-* `/l22_aero_color/debug_img` (`sensor_msgs/Image`) - изображение для отладки.
-* `/qr_debug` (`sensor_msgs/Image`) - изображение для отладки.
+* `/l22_aero_color/markers` (`l22_aero_vision/ColorMarkerArray`) - list of rectangular markers.
+* `/l22_aero_color/circles` (`l22_aero_vision/ColorMarkerArray`) - list of round markers.
+* `/l22_aero_color/debug_img` (`sensor_msgs/Image`) - image for debugging.
+* `/qr_debug` (`sensor_msgs/Image`) - image for debugging.
 
 ### Messages
 
