@@ -23,7 +23,7 @@ The final task of Innopolis Open 2020 was dedicated to monitoring agricultural t
 
 The code is available on GitHub: https://github.com/vas0x59/ior2020_uav_L22_AERO.
 
-## Main programm
+## Main program
 
 When implementing the code, in the original concept we used our own message types, multiple nodes, and other ROS stuff. For this you need to create a package and compile it, but due to the specifics of the competition (a single SD card was used for all teams), all the code was merged into a single file. This approach made debugging much more difficult, but running the code on the drone became much easier.
 
